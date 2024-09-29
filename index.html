@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        label {
+            font-size: 1em;
+            color: #555;
+        }
+
+        input[type="button"],
+        input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="reset"] {
+            background-color: #f44336; /* Different color for reset button */
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e53935;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        br {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <fieldset>
+    <legend>Basic Form</legend>
+    FIRST NAME:
+    <input type="text" required placeholder="Full Name">
+    LAST NAME:
+    <input type="text" required placeholder="Last Name">
+    <br>
+    AGE:
+    <input type="date" required placeholder="Age">
+    GENDER:
+    <input type="radio" name="GENDER" value="MALE">
+    MALE
+    <input type="radio" name="GENDER" value="FEMALE">
+    FEMALE
+    <br>
+    EMAIL:
+    <input type="email"><br>
+    PASSWORD:
+    <input type="password">
+    <br>
+    COUNTRY:
+    <select>
+        <option>India</option>
+        <option>USA</option>
+        <option>UAE</option>
+    </select>
+    UPLOAD PHOTO:
+    <input type="file">
+    <br>
+    <input type="button" value="SIGN UP">
+    <input type="reset">
+    
+    </fieldset>
+    </form>
+</body>
+</html>
