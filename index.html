@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Styled Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,13 +34,21 @@
             text-align: center;
         }
 
+        label {
+            font-size: 1em;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
         input[type="text"],
         input[type="date"],
         input[type="email"],
         input[type="password"],
+        input[type="number"],
         select,
         input[type="file"] {
-            width: calc(100% - 20px);
+            width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -52,12 +60,21 @@
             margin-right: 5px;
         }
 
-        label {
-            font-size: 1em;
-            color: #555;
+        .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        input[type="button"],
+        .radio-group label {
+            margin-right: 10px;
+        }
+
+        .radio-group input {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
         input[type="reset"] {
             width: 48%;
             padding: 10px;
@@ -74,7 +91,7 @@
             background-color: #f44336; /* Different color for reset button */
         }
 
-        input[type="button"]:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
         }
 
@@ -87,46 +104,59 @@
             justify-content: space-between;
         }
 
-        br {
-            margin-bottom: 10px;
+        .file-upload {
+            margin: 10px 0;
         }
+
     </style>
 </head>
 <body>
     <form>
-    <fieldset>
-    <legend>Basic Form</legend>
-    FIRST NAME:
-    <input type="text" required placeholder="Full Name">
-    LAST NAME:
-    <input type="text" required placeholder="Last Name">
-    <br>
-    AGE:
-    <input type="date" required placeholder="Age">
-    GENDER:
-    <input type="radio" name="GENDER" value="MALE">
-    MALE
-    <input type="radio" name="GENDER" value="FEMALE">
-    FEMALE
-    <br>
-    EMAIL:
-    <input type="email"><br>
-    PASSWORD:
-    <input type="password">
-    <br>
-    COUNTRY:
-    <select>
-        <option>India</option>
-        <option>USA</option>
-        <option>UAE</option>
-    </select>
-    UPLOAD PHOTO:
-    <input type="file">
-    <br>
-    <input type="button" value="SIGN UP">
-    <input type="reset">
-    
-    </fieldset>
+        <fieldset>
+            <legend>Basic Form</legend>
+
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" required placeholder="Enter First Name">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" required placeholder="Enter Last Name">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required placeholder="Enter Age">
+
+            <div class="radio-group">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Enter Email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Enter Password">
+
+            <label for="country">Country:</label>
+            <select id="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UAE">UAE</option>
+            </select>
+
+            <label class="file-upload" for="photo">Upload Photo:</label>
+            <input type="file" id="photo">
+
+            <div class="button-group">
+                <input type="submit" value="Sign Up">
+                <input type="reset" value="Reset">
+            </div>
+
+        </fieldset>
     </form>
 </body>
 </html>
